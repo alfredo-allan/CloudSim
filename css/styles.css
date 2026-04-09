@@ -455,6 +455,7 @@ h4,
   color: white !important;
 }
 
-code {
+code,
+h5 {
   color: white !important;
 }

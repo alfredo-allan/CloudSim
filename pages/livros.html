@@ -1,0 +1,796 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudSim Lab - Guia Completo: Computação em Nuvem (4 Livros Unificados)</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Seus CSS existentes -->
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <style>
+      .concept-card {
+        transition:
+          transform 0.3s,
+          box-shadow 0.3s;
+        height: 100%;
+      }
+      .concept-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+      }
+      .use-case-badge {
+        background: rgba(255, 107, 107, 0.15);
+        border-left: 3px solid #ff6b6b;
+        padding: 0.75rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+      }
+      .glossary-term {
+        border-bottom: 1px dashed #6c5ce7;
+        cursor: help;
+      }
+      .model-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-bottom: 0.5rem;
+      }
+      .strategy-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #00b894, #55efc4);
+        color: #0a0a0a;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.7rem;
+        font-weight: 600;
+        margin-right: 0.5rem;
+      }
+      .cost-highlight {
+        background: rgba(40, 167, 69, 0.15);
+        border-left: 3px solid #28a745;
+        padding: 0.75rem;
+        border-radius: 8px;
+      }
+      .comparison-table {
+        background: rgba(108, 92, 231, 0.05);
+        border-radius: 12px;
+        padding: 1rem;
+      }
+      .material-source {
+        font-size: 0.7rem;
+        color: #6c5ce7;
+        margin-bottom: 0.5rem;
+      }
+      .use-case-badge.mt-2,
+      strong {
+        color: white !important;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header fixed-top">
+      <div class="reading-progress"><div class="progress-bar"></div></div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#"><i class="fab fa-linux me-2"></i><span class="brand-text">CloudSim Lab</span></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#beneficios"><i class="fas fa-rocket me-1"></i>Benefícios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#modelos"><i class="fas fa-layer-group me-1"></i>Modelos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#virtualizacao"><i class="fas fa-microchip me-1"></i>VMs vs Containers</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#armazenamento"><i class="fas fa-database me-1"></i>Armazenamento</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#economia"><i class="fas fa-dollar-sign me-1"></i>Economia</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#seguranca"><i class="fas fa-shield-alt me-1"></i>Segurança</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cloudsim"><i class="fas fa-cloud me-1"></i>CloudSim</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#glossario"><i class="fas fa-book me-1"></i>Glossário</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar-custom"></div>
+          <div class="progress-glow"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <!-- Hero Section -->
+      <section class="hero-section" style="min-height: 50vh">
+        <div class="container">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-10 mx-auto text-center">
+              <h1 class="display-3 fw-bold mb-4"><span class="gradient-text">Guia Completo:</span> Computação em Nuvem</h1>
+              <p class="lead text-gray mb-4">
+                A Computação em Nuvem é o fornecimento de recursos computacionais (armazenamento, processamento e rede) sob demanda através
+                da Internet. Em vez de depender de servidores físicos locais, você acessa infraestruturas robustas globalmente, pagando
+                apenas pelo que consome.
+              </p>
+              <div class="d-flex justify-content-center gap-2 flex-wrap">
+                <span class="badge bg-primary" style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important"
+                  >4 Livros Unificados</span
+                >
+                <span class="badge bg-primary" style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important"
+                  >IaaS • PaaS • SaaS</span
+                >
+                <span class="badge bg-primary" style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important"
+                  >VMs • Containers • CloudSim</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 1. BENEFÍCIOS DA NUVEM (Material 1) -->
+      <!-- ============================================ -->
+      <section id="beneficios" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-rocket me-3"></i>1. Por que migrar para a Nuvem? (Benefícios)</h2>
+          <p class="text-gray mb-4 text-center">A nuvem não é apenas uma mudança tecnológica, mas uma revolução estratégica.</p>
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-dollar-sign fa-2x text-success mb-2"></i>
+                  <h4>Custo-eficiência</h4>
+                  <p class="text-gray small">Elimina gastos com hardware físico e manutenção. Pague apenas pelo que usar.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-chart-line fa-2x text-primary mb-2"></i>
+                  <h4>Escalabilidade e Elasticidade</h4>
+                  <p class="text-gray small">Aumente ou diminua seus recursos instantaneamente conforme a demanda.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-globe fa-2x text-info mb-2"></i>
+                  <h4>Acessibilidade</h4>
+                  <p class="text-gray small">Acesse suas aplicações de qualquer lugar e dispositivo com Internet.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-lightbulb fa-2x text-warning mb-2"></i>
+                  <h4>Inovação Rápida</h4>
+                  <p class="text-gray small">Reduz o tempo de lançamento (time-to-market) de novos produtos.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 2. MODELOS DE SERVIÇO (IaaS, PaaS, SaaS) - Todos os materiais -->
+      <!-- ============================================ -->
+      <section id="modelos" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-layer-group me-3"></i>2. Modelos de Serviço (IaaS, PaaS, SaaS)</h2>
+          <p class="text-gray mb-5 text-center">
+            A escolha do modelo define o nível de controle e responsabilidade do usuário sobre a tecnologia.
+          </p>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <div class="model-badge">IaaS</div>
+                  <h3 class="mt-2"><i class="fas fa-server text-primary me-2"></i>Infraestrutura</h3>
+                  <p class="text-gray">
+                    Oferece recursos brutos como máquinas virtuais (VMs), redes e armazenamento. Você gerencia o SO e aplicações.
+                  </p>
+                  <div class="use-case-badge mt-2">
+                    <i class="fas fa-chart-line text-danger me-2"></i>
+                    <strong>Caso de Uso:</strong> Empresa que migra servidores locais para VMs na nuvem para ganhar escalabilidade
+                    automática.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <div class="model-badge">PaaS</div>
+                  <h3 class="mt-2"><i class="fas fa-code text-primary me-2"></i>Plataforma</h3>
+                  <p class="text-gray">
+                    Ambiente pronto para desenvolvimento e implantação de aplicações, sem gerenciar a infraestrutura subjacente.
+                  </p>
+                  <div class="use-case-badge mt-2">
+                    <i class="fas fa-chart-line text-danger me-2"></i>
+                    <strong>Caso de Uso:</strong> Startup desenvolve um app focando apenas no código, sem configurar servidores (Heroku,
+                    Google App Engine).
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <div class="model-badge">SaaS</div>
+                  <h3 class="mt-2"><i class="fas fa-cloud text-primary me-2"></i>Software</h3>
+                  <p class="text-gray">Aplicativos prontos para uso via navegador, sem necessidade de instalação ou manutenção local.</p>
+                  <div class="use-case-badge mt-2">
+                    <i class="fas fa-chart-line text-danger me-2"></i>
+                    <strong>Caso de Uso:</strong> Uso de ferramentas colaborativas como Google Docs, Microsoft 365 ou Salesforce.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mt-4">
+            <div class="card-body">
+              <h4><i class="fas fa-building text-primary me-2"></i>Principais Provedores Públicos</h4>
+              <div class="row text-center mt-3">
+                <div class="col-md-4">
+                  <i class="fab fa-aws fa-2x" style="color: #ff9900"></i>
+                  <p class="mt-1"><strong>AWS</strong><br /><span class="text-gray small">Líder de mercado</span></p>
+                </div>
+                <div class="col-md-4">
+                  <i class="fab fa-microsoft fa-2x" style="color: #00a4ef"></i>
+                  <p class="mt-1">
+                    <strong>Microsoft Azure</strong><br /><span class="text-gray small">Integração com ecossistema Microsoft</span>
+                  </p>
+                </div>
+                <div class="col-md-4">
+                  <i class="fab fa-google fa-2x" style="color: #4285f4"></i>
+                  <p class="mt-1"><strong>Google Cloud</strong><br /><span class="text-gray small">Especialista em Big Data/ML</span></p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="concept-tip mt-3">
+            <i class="fas fa-lightbulb"></i>
+            <span
+              ><strong>Resumo prático:</strong> IaaS = você aluga o terreno vazio; PaaS = você aluga a cozinha equipada; SaaS = você pede
+              comida entregue.</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 3. MODELOS DE IMPLANTAÇÃO (Materiais 1 e 2) -->
+      <!-- ============================================ -->
+      <section id="implantacao" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-building me-3"></i>3. Modelos de Implantação</h2>
+          <p class="text-gray mb-5 text-center">Define como a nuvem é disponibilizada e quem tem acesso a ela.</p>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fas fa-globe-americas text-primary me-2"></i>Nuvem Pública</h3>
+                  <p class="text-gray">
+                    Recursos compartilhados por múltiplos clientes, mantidos por um provedor externo (AWS, Azure, GCP).
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fas fa-building text-primary me-2"></i>Nuvem Privada</h3>
+                  <p class="text-gray">
+                    Uso exclusivo de uma única organização, oferecendo controle total e maior segurança para dados sensíveis.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fas fa-code-branch text-primary me-2"></i>Nuvem Híbrida</h3>
+                  <p class="text-gray">Integração de nuvens públicas e privadas para permitir transferência de dados e flexibilidade.</p>
+                  <div class="use-case-badge mt-2">
+                    <i class="fas fa-chart-line text-danger me-2"></i>
+                    <strong>Cloud Bursting:</strong> Rede de ensino mantém dados em nuvem privada e usa pública durante pico de matrículas.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 4. ELASTICIDADE vs ESCALABILIDADE (Materiais 1 e 2) -->
+      <!-- ============================================ -->
+      <section id="elasticidade" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-chart-line me-3"></i>4. Elasticidade vs. Escalabilidade</h2>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fas fa-expand-alt text-success me-2"></i>Escalabilidade</h3>
+                  <p class="text-gray">Capacidade de lidar com o <strong>crescimento da demanda</strong> mantendo o desempenho.</p>
+                  <ul class="text-gray mt-2">
+                    <li><strong>Horizontal:</strong> Adicionar mais máquinas idênticas</li>
+                    <li><strong>Vertical:</strong> Aumentar potência (CPU/RAM) de uma máquina</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fas fa-compress-alt text-success me-2"></i>Elasticidade</h3>
+                  <p class="text-gray">
+                    Capacidade do sistema de se <strong>ajustar automaticamente e dinamicamente</strong> à carga de trabalho em tempo real.
+                  </p>
+                  <div class="use-case-badge mt-2">
+                    <i class="fas fa-chart-line text-danger me-2"></i>
+                    <strong>Caso de Uso:</strong> E-commerce escala automaticamente durante Black Friday para evitar lentidão.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="concept-tip mt-3">
+            <i class="fas fa-brain"></i>
+            <span
+              ><strong>Diferença prática:</strong> Escalabilidade é planejada para crescimento (abrir uma nova filial). Elasticidade é
+              reativa e automática (abrir mais caixas quando a fila aumenta).</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 5. DESAFIOS DA NUVEM (Material 1) -->
+      <!-- ============================================ -->
+      <section id="desafios" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-exclamation-triangle me-3"></i>5. Desafios e Cuidados</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <i class="fas fa-lock fa-2x text-warning mb-2"></i>
+                  <h4>Segurança</h4>
+                  <p class="text-gray small">Responsabilidade compartilhada entre provedor e cliente.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <i class="fas fa-gavel fa-2x text-warning mb-2"></i>
+                  <h4>Privacidade e Conformidade</h4>
+                  <p class="text-gray small">Leis como LGPD e GDPR restringem onde dados podem ser armazenados.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <i class="fas fa-clock fa-2x text-warning mb-2"></i>
+                  <h4>Latência</h4>
+                  <p class="text-gray small">Distância física dos data centers pode afetar desempenho em tempo real.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 6. VIRTUALIZAÇÃO vs CONTAINERS (Materiais 3 e 4) -->
+      <!-- ============================================ -->
+      <section id="virtualizacao" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-microchip me-3"></i>6. Virtualização vs. Containerização</h2>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fas fa-server text-primary me-2"></i>Máquinas Virtuais (VMs)</h3>
+                  <p class="text-gray">Cada VM possui seu próprio sistema operacional (SO). Oferece maior isolamento e segurança.</p>
+                  <div class="comparison-table mt-2">
+                    <p class="text-gray small mb-1"><i class="fas fa-check-circle text-success me-1"></i> Isolamento completo</p>
+                    <p class="text-gray small mb-1"><i class="fas fa-check-circle text-success me-1"></i> Inicialização: minutos</p>
+                    <p class="text-gray small"><i class="fas fa-check-circle text-success me-1"></i> Mais seguras</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fab fa-docker text-primary me-2"></i>Contêineres (Docker/Kubernetes)</h3>
+                  <p class="text-gray">Compartilham o SO da máquina física. São mais leves e inicializam mais rápido.</p>
+                  <div class="comparison-table mt-2">
+                    <p class="text-gray small mb-1"><i class="fas fa-bolt text-warning me-1"></i> Inicialização: segundos</p>
+                    <p class="text-gray small mb-1"><i class="fas fa-bolt text-warning me-1"></i> Mais leves (MBs vs GBs)</p>
+                    <p class="text-gray small"><i class="fas fa-bolt text-warning me-1"></i> Facilidade de replicação</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="use-case-badge mt-3">
+            <i class="fas fa-chart-line text-danger me-2"></i>
+            <strong>Caso de Uso Prático:</strong> Use VMs para o banco de dados (isolamento e segurança) e Containers para o serviço web
+            (agilidade na replicação).
+          </div>
+          <div class="concept-tip mt-3">
+            <i class="fas fa-question-circle"></i>
+            <span
+              ><strong>Diferença técnica:</strong> VMs têm seu próprio kernel; Containers compartilham o kernel do host. Por isso,
+              containers são mais leves e rápidos.</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 7. ARMAZENAMENTO EM NUVEM (Material 3) -->
+      <!-- ============================================ -->
+      <section id="armazenamento" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-database me-3"></i>7. Armazenamento e Gerenciamento de Dados</h2>
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-hdd fa-2x text-primary mb-2"></i>
+                  <h5>Em Blocos</h5>
+                  <p class="text-gray small">Discos rígidos de VMs (AWS EBS)</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-folder-open fa-2x text-primary mb-2"></i>
+                  <h5>De Arquivos</h5>
+                  <p class="text-gray small">Sistemas compartilhados (AWS EFS)</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-cloud-upload-alt fa-2x text-primary mb-2"></i>
+                  <h5>De Objetos</h5>
+                  <p class="text-gray small">Dados binários via API (AWS S3)</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-database fa-2x text-primary mb-2"></i>
+                  <h5>DBaaS</h5>
+                  <p class="text-gray small">Bancos gerenciados (Amazon RDS)</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="concept-tip mt-3">
+            <i class="fas fa-question-circle"></i>
+            <span
+              ><strong>O que é DBaaS?</strong> Database as a Service - banco de dados gerenciado. Exemplo: Amazon RDS cuida de backups,
+              patches e alta disponibilidade automaticamente.</span
+            >
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 8. BIG DATA, IoT e MULTIMÍDIA (Materiais 2 e 3) -->
+      <!-- ============================================ -->
+      <section id="bigdata" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-chart-bar me-3"></i>8. Big Data, IoT e Multimídia</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <i class="fas fa-chart-line fa-2x text-primary mb-2"></i>
+                  <h4>Big Data</h4>
+                  <p class="text-gray small">Processamento de massas gigantescas de dados não estruturados.</p>
+                  <div class="use-case-badge mt-2">
+                    <i class="fas fa-chart-line text-danger me-2"></i>
+                    <span class="small">Varejista analisa 2,5 PB de dados/hora com Google BigQuery</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <i class="fas fa-wifi fa-2x text-primary mb-2"></i>
+                  <h4>Internet das Coisas (IoT)</h4>
+                  <p class="text-gray small">Conecta dispositivos físicos à nuvem para monitoramento.</p>
+                  <div class="use-case-badge mt-2">
+                    <i class="fas fa-chart-line text-danger me-2"></i>
+                    <span class="small">Sensores industriais para manutenção preventiva</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card">
+                <div class="card-body text-center">
+                  <i class="fas fa-video fa-2x text-primary mb-2"></i>
+                  <h4>Aplicações Multimídia</h4>
+                  <p class="text-gray small">Streaming de vídeo ao vivo ou sob demanda.</p>
+                  <div class="use-case-badge mt-2">
+                    <i class="fas fa-chart-line text-danger me-2"></i>
+                    <span class="small">Transcodificação de vídeos para múltiplos formatos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 9. ECONOMIA DA NUVEM (Material 4) -->
+      <!-- ============================================ -->
+      <section id="economia" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-dollar-sign me-3"></i>9. Economia da Nuvem e Gestão de Custos</h2>
+          <div class="row g-4">
+            <div class="col-md-6">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fas fa-clock text-primary me-2"></i>Pay-as-you-go</h3>
+                  <p class="text-gray">Pagamento apenas pelo consumo efetivo. Ideal para cargas imprevisíveis.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card concept-card">
+                <div class="card-body">
+                  <h3><i class="fas fa-calendar-check text-primary me-2"></i>Reservas de Longo Prazo</h3>
+                  <p class="text-gray">Contratos de meses ou anos com descontos de até 70% para cargas estáveis.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="cost-highlight mt-3">
+            <i class="fas fa-chart-line text-success me-2"></i>
+            <strong>Exemplo de Custo Real:</strong> Projeto de 20 meses: nuvem = R$96.000 | Infraestrutura própria = R$98.000. Projeto de 24
+            meses: nuvem = R$115.200 | Infraestrutura própria = R$108.000.
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 10. ESTRATÉGIAS DE MIGRAÇÃO (Material 4) -->
+      <!-- ============================================ -->
+      <section id="migracao" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-exchange-alt me-3"></i>10. Estratégias de Migração para a Nuvem</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <span class="strategy-badge">Lift & Shift</span>
+                  <h3 class="mt-2">Re-host</h3>
+                  <p class="text-gray small">
+                    Mover a aplicação sem mudanças no código (copiar VMs). Rápido, mas não aproveita recursos nativos.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <span class="strategy-badge">Otimização</span>
+                  <h3 class="mt-2">Re-platform</h3>
+                  <p class="text-gray small">Pequenos ajustes para aproveitar serviços gerenciados como DBaaS.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <span class="strategy-badge">Nativo da Nuvem</span>
+                  <h3 class="mt-2">Re-factor</h3>
+                  <p class="text-gray small">Remodelar totalmente a aplicação para aproveitar o potencial máximo da nuvem.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 11. SEGURANÇA E IAM (Material 4) -->
+      <!-- ============================================ -->
+      <section id="seguranca" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-shield-alt me-3"></i>11. Segurança e Gerenciamento de Identidade (IAM)</h2>
+          <div class="row g-4">
+            <div class="col-md-4">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-fingerprint fa-2x text-primary mb-2"></i>
+                  <h4>Autenticação</h4>
+                  <p class="text-gray small">Verifica a identidade (senha, biometria, MFA).</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-key fa-2x text-primary mb-2"></i>
+                  <h4>Autorização</h4>
+                  <p class="text-gray small">Controla níveis de permissão (ler, escrever, deletar).</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card concept-card text-center">
+                <div class="card-body">
+                  <i class="fas fa-id-card fa-2x text-primary mb-2"></i>
+                  <h4>SSO (Single Sign On)</h4>
+                  <p class="text-gray small">Acesse múltiplos serviços com uma única identidade.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 12. CLOUDSIM - SIMULAÇÃO PRÁTICA (Material 2) -->
+      <!-- ============================================ -->
+      <section id="cloudsim" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-cloud me-3"></i>12. Prática: Simulação com CloudSim</h2>
+          <div class="card">
+            <div class="card-body">
+              <p class="text-gray">
+                O <strong>CloudSim</strong> é um framework em Java para modelar infraestruturas de nuvem antes da implementação física.
+              </p>
+              <ul class="text-gray">
+                <li><strong>Vantagens:</strong> Testar hipóteses sem custos de hardware, avaliar riscos, identificar gargalos</li>
+                <li><strong>Fluxo:</strong> Datacenter (recursos) → Hosts (servidores) → VMs → Cloudlets (tarefas)</li>
+                <li><strong>Métricas:</strong> Tempo de execução, throughput (instruções/segundo), custo</li>
+              </ul>
+              <div class="concept-tip mt-3">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Fórmula do tempo de processamento:</strong> Tempo = Instruções / (MIPS × PEs). Ex: 10.000 instruções / (500 MIPS
+                  × 1 PE) = 20 segundos.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- 13. GLOSSÁRIO COMPLETO (Todos os materiais) -->
+      <!-- ============================================ -->
+      <section id="glossario" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-book me-3"></i>13. Glossário de Termos Técnicos</h2>
+          <div class="row g-4">
+            <div class="col-lg-10 mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <p class="text-gray">
+                        <strong class="glossary-term">API</strong>: Interface que permite comunicação e automação de recursos na nuvem.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">BYOL</strong>: Bring Your Own License - uso de licenças próprias no provedor.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">CDN</strong>: Content Delivery Network - reduz latência distribuindo conteúdo.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">Cloudlets</strong>: Unidades de carga de trabalho em simulações CloudSim.
+                      </p>
+                      <p class="text-gray"><strong class="glossary-term">Datacenter</strong>: Instalação física que abriga servidores.</p>
+                      <p class="text-gray"><strong class="glossary-term">Downtime</strong>: Período de inatividade de um serviço.</p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">FinOps</strong>: Governança financeira para otimizar custos de nuvem.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">Hypervisor</strong>: Software que gerencia máquinas virtuais (VMware, KVM, Xen).
+                      </p>
+                    </div>
+                    <div class="col-md-6">
+                      <p class="text-gray"><strong class="glossary-term">Kubernetes (K8s)</strong>: Orquestrador de contêineres.</p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">MIPS</strong>: Milhões de Instruções por Segundo - medida de processamento.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">Multicloud</strong>: Uso de múltiplos provedores simultaneamente.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">NoSQL</strong>: Bancos não relacionais para dados não estruturados.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">On-Premise</strong>: Infraestrutura mantida localmente na empresa.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">SLA</strong>: Service Level Agreement - contrato de nível de serviço.
+                      </p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">TCO</strong>: Custo Total de Propriedade (capital + operacional).
+                      </p>
+                      <p class="text-gray"><strong class="glossary-term">Throughput</strong>: Taxa de processamento de dados por tempo.</p>
+                      <p class="text-gray">
+                        <strong class="glossary-term">VPC</strong>: Virtual Private Cloud - rede isolada na nuvem pública.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6"><p class="mb-0">© 2026 CloudSim Lab - Guia Completo: 4 Livros Unificados</p></div>
+          <div class="col-md-6 text-md-end">
+            <span><i class="fas fa-cloud-upload-alt me-1"></i>Material Didático</span>
+            <span class="mx-2">|</span>
+            <span><i class="fas fa-graduation-cap me-1"></i>4 Materiais Consolidados</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="../js/header.js"></script>
+    <script>
+      window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+        const scrolled = (winScroll / height) * 100
+        const progressBar = document.querySelector('.reading-progress .progress-bar')
+        if (progressBar) progressBar.style.width = scrolled + '%'
+      })
+    </script>
+  </body>
+</html>

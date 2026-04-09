@@ -27,6 +27,9 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
+            <li class="nav-item">
+              <a class="nav-link" href="./pages/livros.html"> <i class="fas fa-graduation-cap me-1"></i>Didática </a>
+            </li>
             <ul class="navbar-nav ms-auto">
               <li class="nav-item">
                 <a class="nav-link" href="#introducao"><i class="fas fa-book-open me-1"></i>Introdução</a>
@@ -42,6 +45,9 @@
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#codigo"><i class="fas fa-code me-1"></i>Código</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#questoes"><i class="fas fa-question-circle me-1"></i>Questões</a>
               </li>
             </ul>
           </div>
@@ -307,6 +313,680 @@ public class Redes {
           </div>
         </div>
       </section>
+
+      <!-- SEÇÃO DE QUESTÕES DO QUESTIONÁRIO -->
+      <!-- SEÇÃO DE QUESTÕES - PRIMEIRA BATERIA (REFATORADA - PADRÃO CORRETO) -->
+      <section id="questoes" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-question-circle me-3"></i>6. Questionário AV1 - Computação em Nuvem</h2>
+
+          <!-- Questão 1 - Modelos de Serviço -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Modelos de Serviço | Elasticidade | Virtualização</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 1</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Com base nas características, benefícios e desafios da computação em nuvem, assinale a alternativa correta:"
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa D</strong><br />
+                "O provisionamento sob demanda e a elasticidade rápida são viabilizados pelas tecnologias de virtualização utilizadas na
+                computação em nuvem."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Explicação detalhada:</strong> A virtualização é a tecnologia fundamental que permite que um único servidor
+                  físico rode múltiplas máquinas virtuais isoladas. É ela que possibilita o provisionamento sob demanda (criar recursos
+                  quando precisar) e a elasticidade rápida (aumentar ou diminuir recursos em minutos). Sem virtualização, a nuvem não
+                  existiria como conhecemos hoje.</span
+                >
+              </div>
+
+              <div class="mt-3 text-gray">
+                <h6><i class="fas fa-times-circle text-danger me-2"></i>Alternativas incorretas:</h6>
+                <ul>
+                  <li>
+                    <strong>Alternativa A:</strong> SaaS não dá controle sobre infraestrutura - o usuário só usa o software pronto (ex:
+                    Gmail, Netflix).
+                  </li>
+                  <li>
+                    <strong>Alternativa B:</strong> Elasticidade é capacidade de ajustar recursos dinamicamente, não sobre cobrança fixa
+                    contratada.
+                  </li>
+                  <li>
+                    <strong>Alternativa C:</strong> IaaS dá controle sobre infraestrutura (VMs, rede, storage), mas o usuário ainda gerencia
+                    SO e aplicações.
+                  </li>
+                  <li>
+                    <strong>Alternativa E:</strong> A nuvem tem grandes vantagens econômicas: pague pelo que usar, sem investimento inicial
+                    em hardware.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Uma startup de e-commerce que tem picos de vendas na Black Friday. Com virtualização e
+                  elasticidade, ela pode automaticamente aumentar servidores durante o pico (ex: 50 VMs) e reduzir depois (ex: 5 VMs),
+                  pagando apenas pelo que usou. Sem isso, teria que comprar servidores físicos caros que ficariam ociosos a maior parte do
+                  ano.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 2 - Armazenamento e Big Data -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Armazenamento | Big Data | AWS | Azure | GCP</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 2</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Assinale a alternativa que apresenta uma associação correta entre o tipo de serviço e sua principal finalidade."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa E</strong><br />
+                "O Google BigQuery é uma solução serverless para análise de dados, adequada para aplicações de inteligência de negócios."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Explicação detalhada:</strong> O Google BigQuery é um data warehouse serverless que permite analisar terabytes de
+                  dados em segundos usando SQL. É amplamente usado para Business Intelligence (BI), dashboards e análises de grandes volumes
+                  de dados. Diferente de bancos tradicionais, ele escala automaticamente e cobra apenas pelo que é processado.</span
+                >
+              </div>
+
+              <div class="mt-3 text-gray">
+                <h6><i class="fas fa-times-circle text-danger me-2"></i>Alternativas incorretas:</h6>
+                <ul>
+                  <li>
+                    <strong>Alternativa A:</strong> Armazenamento em blocos (ex: AWS EBS) é para discos virtuais de VMs. Dados não
+                    estruturados via API é armazenamento de objetos (ex: AWS S3).
+                  </li>
+                  <li>
+                    <strong>Alternativa B:</strong> Amazon Kinesis é para processamento de dados em tempo real (streaming), não para
+                    armazenamento persistente de arquivos.
+                  </li>
+                  <li>
+                    <strong>Alternativa C:</strong> Azure Blob Storage é armazenamento de objetos, não banco de dados relacional com SQL.
+                  </li>
+                  <li>
+                    <strong>Alternativa D:</strong> Amazon EFS é armazenamento de arquivos compartilhado, não "disco virtual" (isso seria
+                    EBS).
+                  </li>
+                </ul>
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Uma empresa de varejo com 10 milhões de vendas por dia usa o BigQuery para analisar padrões
+                  de compra em tempo real. Em segundos, o BigQuery processa dados que levariam horas em bancos tradicionais, permitindo à
+                  empresa ajustar promoções instantaneamente.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 3 - Modelos de Implantação -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Modelos de Implantação | Pública | Privada | Híbrida</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 3</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Assinale a alternativa correta quanto aos modelos de implantação de computação em nuvem."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa C</strong><br />
+                "A nuvem híbrida permite o uso combinado de nuvem pública e privada, sendo útil para aplicações com partes sensíveis que
+                exigem segurança e outras que demandam escalabilidade."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Explicação detalhada:</strong> A nuvem híbrida é o melhor dos dois mundos: dados sensíveis ficam na nuvem privada
+                  (mais segura, controlada), enquanto aplicações que precisam de escalabilidade usam a nuvem pública (AWS, Azure, GCP). É o
+                  modelo mais adotado por grandes empresas que precisam equilibrar segurança e custo.</span
+                >
+              </div>
+
+              <div class="mt-3 text-gray">
+                <h6><i class="fas fa-times-circle text-danger me-2"></i>Alternativas incorretas:</h6>
+                <ul>
+                  <li>
+                    <strong>Alternativa A:</strong> Nuvem pública é compartilhada entre múltiplas organizações, não é exclusiva de uma.
+                  </li>
+                  <li>
+                    <strong>Alternativa B:</strong> A definição está incompleta e confusa. Nem toda aplicação híbrida precisa ficar
+                    totalmente isolada.
+                  </li>
+                  <li>
+                    <strong>Alternativa D:</strong> Nuvem privada NÃO oferece escalabilidade ilimitada (tem limites físicos do hardware) e
+                    geralmente é mais cara.
+                  </li>
+                  <li>
+                    <strong>Alternativa E:</strong> Nuvem comunitária é compartilhada entre organizações com interesses comuns (ex: bancos),
+                    não é pública com fins comerciais.
+                  </li>
+                </ul>
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Um banco mantém os dados de clientes (dados sensíveis) em sua nuvem privada por questões de
+                  compliance (LGPD). Mas durante o horário de pico (ex: Black Friday), ele utiliza a nuvem pública da AWS para processar
+                  transações, escalando automaticamente. Isso é nuvem híbrida.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 4 - DevOps, IoT, Multimídia -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >DevOps | IoT | Multimídia | Geoespacial</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 4</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Analise as afirmativas sobre serviços e soluções em nuvem para desenvolvimento de software, multimídia e IoT."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa D</strong><br />
+                "Apenas as afirmativas III, IV e V estão corretas."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Análise detalhada das afirmativas:</strong><br />
+                  ❌ <strong>I (Incorreta):</strong> Azure Test Plans existe, mas é para gestão de testes manuais/exploratórios, NÃO para
+                  automação de testes (isso seria Azure DevOps Test Plans).<br />
+                  ❌ <strong>II (Incorreta):</strong> AWS Elemental MediaConvert é para codificação de vídeo sob demanda (arquivos
+                  gravados). Para vídeo ao vivo, seria AWS Elemental MediaLive.<br />
+                  ✅ <strong>III (Correta):</strong> Cloud IoT Core (Google) gerencia dispositivos IoT e coleta dados de sensores em tempo
+                  real.<br />
+                  ✅ <strong>IV (Correta):</strong> AWS CodePipeline automatiza CI/CD (Continuous Integration/Continuous Deployment).<br />
+                  ✅ <strong>V (Correta):</strong> Azure Maps fornece APIs geoespaciais para rastreamento, rotas, geolocalização.</span
+                >
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Uma empresa de logística usa Azure Maps para rastrear frotas em tempo real, AWS
+                  CodePipeline para atualizar automaticamente o app de entregas quando o código muda, e Google Cloud IoT Core para coletar
+                  dados de sensores de temperatura dos caminhões refrigerados.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 5 - Armazenamento, NoSQL, Big Data -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Armazenamento | NoSQL | Big Data | Bancos de Dados</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 5</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Analise as afirmativas sobre armazenamento em nuvem, bancos de dados em nuvem e Big Data."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa A</strong><br />
+                "Apenas as afirmativas III, IV e V estão corretas."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Análise detalhada das afirmativas:</strong><br />
+                  ❌ <strong>I (Incorreta):</strong> Armazenamento transitório (ephemeral) é volátil - dados são perdidos quando a VM é
+                  reiniciada. O correto para persistência é armazenamento persistente.<br />
+                  ❌ <strong>II (Incorreta):</strong> NoSQL é para dados não estruturados/sem esquema rígido. Para integridade referencial e
+                  estrutura rígida, usa-se bancos relacionais (SQL).<br />
+                  ✅ <strong>III (Correta):</strong> Armazenamento hospedado é o armazenamento principal do cliente (ex: AWS S3, Azure
+                  Blob), focado em desempenho e disponibilidade.<br />
+                  ✅ <strong>IV (Correta):</strong> Soluções de Big Data em nuvem se beneficiam da elasticidade e escalabilidade para
+                  processar grandes volumes de dados.<br />
+                  ✅ <strong>V (Correta):</strong> Bancos de dados em nuvem oferecem backup automático, alta disponibilidade, tolerância a
+                  falhas e pagamento por uso.</span
+                >
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Uma rede social usa NoSQL (ex: DynamoDB) para armazenar posts e comentários (dados não
+                  estruturados), Big Data na nuvem (ex: EMR) para analisar tendências de engajamento, e bancos gerenciados (ex: RDS) para
+                  dados de usuários com backup automático e alta disponibilidade.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Glossário da Primeira Seção -->
+          <div class="card mt-4">
+            <div class="card-body">
+              <h3><i class="fas fa-book text-primary me-2"></i>Glossário Técnico</h3>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <h5><i class="fas fa-cloud text-primary me-2"></i>Modelos de Serviço</h5>
+                  <ul class="text-gray">
+                    <li>
+                      <strong>IaaS (Infrastructure as a Service):</strong> Aluguel de infraestrutura (VMs, rede, storage). Ex: AWS EC2,
+                      Google Compute Engine.
+                    </li>
+                    <li>
+                      <strong>PaaS (Platform as a Service):</strong> Plataforma de desenvolvimento pronta. Ex: Google App Engine, Heroku.
+                    </li>
+                    <li><strong>SaaS (Software as a Service):</strong> Software pronto pela internet. Ex: Gmail, Netflix, Salesforce.</li>
+                  </ul>
+                  <h5 class="mt-3"><i class="fas fa-building text-primary me-2"></i>Modelos de Implantação</h5>
+                  <ul class="text-gray">
+                    <li><strong>Nuvem Pública:</strong> Recursos compartilhados pela internet, pago por uso.</li>
+                    <li><strong>Nuvem Privada:</strong> Recursos exclusivos de uma organização, maior controle e segurança.</li>
+                    <li><strong>Nuvem Híbrida:</strong> Combinação de pública + privada, melhor dos dois mundos.</li>
+                    <li><strong>Nuvem Comunitária:</strong> Compartilhada entre organizações com interesses comuns.</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5><i class="fas fa-database text-primary me-2"></i>Tipos de Armazenamento</h5>
+                  <ul class="text-gray">
+                    <li><strong>Armazenamento em Blocos:</strong> Discos virtuais para VMs (ex: AWS EBS, Azure Disk).</li>
+                    <li><strong>Armazenamento de Objetos:</strong> Dados não estruturados via API (ex: AWS S3, Azure Blob).</li>
+                    <li><strong>Armazenamento de Arquivos:</strong> Sistemas de arquivos compartilhados (ex: AWS EFS, Azure Files).</li>
+                  </ul>
+                  <h5 class="mt-3"><i class="fas fa-chart-line text-primary me-2"></i>Conceitos Fundamentais</h5>
+                  <ul class="text-gray">
+                    <li><strong>Elasticidade:</strong> Capacidade de ajustar recursos automaticamente conforme demanda.</li>
+                    <li><strong>Virtualização:</strong> Tecnologia que permite múltiplas VMs em um único servidor físico.</li>
+                    <li><strong>Serverless:</strong> Executa código sem gerenciar servidores (ex: AWS Lambda).</li>
+                    <li><strong>Big Data:</strong> Processamento de grandes volumes de dados (volume, velocidade, variedade).</li>
+                    <li><strong>NoSQL:</strong> Bancos de dados não relacionais para dados não estruturados.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Seção de Questões - Microserviços, Segurança em Nuvem, Migração, Precificação, Containerização -->
+      <section id="questoes" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-question-circle me-3"></i>6. Questionário AV1 - Computação em Nuvem (Parte 2)</h2>
+
+          <!-- Questão 1 - Microserviços vs Monolítica -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Microserviços | Arquitetura Monolítica | Escalabilidade</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 1</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Considerando as principais características e vantagens da arquitetura de microserviços em comparação à arquitetura
+                monolítica, analise as afirmações..."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa C</strong><br />
+                "Apenas as afirmativas I, II e IV estão corretas."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Análise detalhada:</strong><br />
+                  ✅ <strong>I (Correta):</strong> Cada microserviço é um serviço independente e altamente coeso.<br />
+                  ✅ <strong>II (Correta):</strong> Microserviços permitem replicar seletivamente apenas os módulos com maior demanda.<br />
+                  ❌ <strong>III (Incorreta):</strong> Em arquitetura monolítica, qualquer atualização exige reinicialização completa.<br />
+                  ✅ <strong>IV (Correta):</strong> Microserviços favorecem contêineres e bancos distintos por serviço.<br />
+                  ❌ <strong>V (Incorreta):</strong> Em monolítico, não é possível replicar módulos independentemente.</span
+                >
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Netflix migrou de monolítico para microserviços, permitindo escalar apenas o serviço de
+                  catálogo durante picos de acesso, sem afetar o serviço de recomendações.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 2 - Segurança em Nuvem -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Segurança | IAM | Criptografia | SSO | Hardened VMs</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 2</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Considerando os mecanismos de segurança aplicados a serviços em nuvem e os princípios do gerenciamento de riscos, analise
+                as afirmativas..."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa A (ou E)</strong><br />
+                "Apenas as afirmativas II, III e IV estão corretas."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Análise detalhada:</strong><br />
+                  ❌ <strong>I (Incorreta):</strong> Criptografia também pode garantir integridade (hash) e autenticidade (assinaturas).<br />
+                  ✅ <strong>II (Correta):</strong> IAM é essencial para controle de privilégios e autenticação.<br />
+                  ✅ <strong>III (Correta):</strong> SSO facilita gestão segura de credenciais entre múltiplos provedores.<br />
+                  ✅ <strong>IV (Correta):</strong> Hardened VMs são configuradas com políticas rígidas de segurança.<br />
+                  ❌ <strong>V (Incorreta):</strong> Gerenciamento de riscos é contínuo, não apenas no momento da contratação.</span
+                >
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Uma empresa que usa AWS, Azure e Google Cloud implementa SSO para que funcionários acessem
+                  todos os serviços com uma única senha, enquanto IAM define quem pode criar ou deletar recursos.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 3 - Migração para Nuvem -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Migração | Re-host | Re-platform | Re-factor | IAM | SSO</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 3</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Com base no processo de migração de aplicações para a nuvem e nos mecanismos de controle de acesso, analise as
+                afirmativas..."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa D</strong><br />
+                "Apenas as afirmativas I, III e IV estão corretas."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Análise detalhada:</strong><br />
+                  ✅ <strong>I (Correta):</strong> Re-host (Lift & Shift) é rápido mas não aproveita recursos nativos da nuvem.<br />
+                  ❌ <strong>II (Incorreta):</strong> Re-platform adapta parcialmente; quem redesenha profundamente é Re-factor.<br />
+                  ✅ <strong>III (Correta):</strong> IAM é fundamental para controle de acesso em nuvem.<br />
+                  ✅ <strong>IV (Correta):</strong> Re-factor (redesenho) exige maior esforço mas maximiza benefícios da nuvem.<br />
+                  ❌ <strong>V (Incorreta):</strong> SSO não é dispensável em nuvem privada; continua importante para segurança.</span
+                >
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Uma empresa migrou seu sistema de RH com Re-host (rápido, mas sem otimização) e seu sistema
+                  de vendas com Re-factor (totalmente redesenado para usar Lambda e DynamoDB), maximizando escala e reduzindo custos.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 4 - Precificação em Nuvem -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Precificação | On-Demand | Reserved | TCO | SaaS</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 4</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Sobre os modelos de precificação e as práticas de otimização de custos na computação em nuvem, analise as afirmações..."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa A</strong><br />
+                "Apenas as afirmativas I, III, IV e V estão corretas."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Análise detalhada:</strong><br />
+                  ✅ <strong>I (Correta):</strong> On-Demand cobra pelo uso real, alocação dinâmica.<br />
+                  ❌ <strong>II (Incorreta):</strong> Reserva de longo prazo tem preços MAIS BAIXOS que on-demand (é a vantagem).<br />
+                  ✅ <strong>III (Correta):</strong> Desligar recursos não utilizados reduz custos significativamente.<br />
+                  ✅ <strong>IV (Correta):</strong> TCO considera custos operacionais (OPEX) e de capital (CAPEX).<br />
+                  ✅ <strong>V (Correta):</strong> SaaS usa modelo de assinatura periódica.</span
+                >
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Uma empresa reserva instâncias por 3 anos (Reserved Instance) pagando 60% menos que
+                  on-demand, e desliga ambientes de desenvolvimento aos finais de semana, economizando 40% adicionais.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Questão 5 - Containerização -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <span
+                class="badge bg-primary mb-3"
+                style="background: linear-gradient(45deg, #6c5ce7, #a29bfe) !important; display: inline-block"
+                >Docker | Kubernetes | Contêineres | Virtualização | Hypervisor</span
+              >
+              <h3 class="mb-3"><i class="fas fa-question-circle text-primary me-2"></i>Questão 5</h3>
+              <p class="text-gray fst-italic mb-3">
+                "Com base nos conceitos apresentados sobre virtualização e containerização de aplicações, analise as afirmativas..."
+              </p>
+
+              <div
+                class="answer-box correct"
+                style="
+                  background: rgba(40, 167, 69, 0.15);
+                  border-left: 4px solid #28a745;
+                  padding: 1rem;
+                  border-radius: 8px;
+                  margin-bottom: 1rem;
+                "
+              >
+                <i class="fas fa-check-circle text-success me-2"></i>
+                <strong>Resposta Correta: Alternativa C</strong><br />
+                "Apenas as afirmativas I, III e IV estão corretas."
+              </div>
+
+              <div class="concept-tip">
+                <i class="fas fa-brain"></i>
+                <span
+                  ><strong>Análise detalhada:</strong><br />
+                  ✅ <strong>I (Correta):</strong> Contêineres são mais leves por não incluírem SO próprio.<br />
+                  ❌ <strong>II (Incorreta):</strong> Isolamento completo com SO distintos é característica de VMs, não contêineres.<br />
+                  ✅ <strong>III (Correta):</strong> Docker empacota aplicação com dependências, garantindo consistência.<br />
+                  ✅ <strong>IV (Correta):</strong> Kubernetes orquestra contêineres em clusters.<br />
+                  ❌ <strong>V (Incorreta):</strong> Hypervisores (XenServer, ESXi) são para VMs, não para orquestração de
+                  contêineres.</span
+                >
+              </div>
+
+              <div class="concept-tip mt-3" style="background: rgba(255, 107, 107, 0.1); border-left-color: #ff6b6b">
+                <i class="fas fa-chart-line"></i>
+                <span
+                  ><strong>Caso de Uso:</strong> Spotify usa Docker para empacotar microserviços e Kubernetes para gerenciar milhares de
+                  contêineres, permitindo deploy contínuo e escala automática durante picos de streaming.</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- Glossário da Seção -->
+          <div class="card mt-4">
+            <div class="card-body">
+              <h3><i class="fas fa-book text-primary me-2"></i>Glossário Técnico - Parte 2</h3>
+              <div class="row mt-3">
+                <div class="col-md-6">
+                  <h5><i class="fas fa-cubes text-primary me-2"></i>Arquitetura</h5>
+                  <ul class="text-gray">
+                    <li><strong>Microserviços:</strong> Arquitetura que divide aplicações em serviços pequenos e independentes</li>
+                    <li><strong>Monolítico:</strong> Aplicação única onde todos os módulos são acoplados</li>
+                    <li><strong>Re-host:</strong> Migração "lift and shift" sem alterações</li>
+                    <li><strong>Re-platform:</strong> Adaptação parcial para serviços de nuvem</li>
+                    <li><strong>Re-factor:</strong> Redesenho completo da arquitetura</li>
+                  </ul>
+                  <h5 class="mt-3"><i class="fas fa-shield-alt text-primary me-2"></i>Segurança</h5>
+                  <ul class="text-gray">
+                    <li><strong>IAM:</strong> Gerenciamento de Identidade e Acesso</li>
+                    <li><strong>SSO:</strong> Single Sign-On - autenticação unificada</li>
+                    <li><strong>Hardened VM:</strong> Máquina virtual com configurações de segurança rigorosas</li>
+                  </ul>
+                </div>
+                <div class="col-md-6">
+                  <h5><i class="fas fa-dollar-sign text-primary me-2"></i>Precificação</h5>
+                  <ul class="text-gray">
+                    <li><strong>On-Demand:</strong> Pagamento pelo uso real, sem compromisso</li>
+                    <li><strong>Reserved:</strong> Reserva antecipada com desconto</li>
+                    <li><strong>TCO:</strong> Custo Total de Propriedade</li>
+                  </ul>
+                  <h5 class="mt-3"><i class="fab fa-docker text-primary me-2"></i>Containerização</h5>
+                  <ul class="text-gray">
+                    <li><strong>Docker:</strong> Plataforma de empacotamento de contêineres</li>
+                    <li><strong>Kubernetes:</strong> Orquestrador de contêineres</li>
+                    <li><strong>Hypervisor:</strong> Camada que gerencia máquinas virtuais</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -330,7 +1010,8 @@ public class Redes {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop
         const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
         const scrolled = (winScroll / height) * 100
-        document.getElementById('progressBar').style.width = scrolled + '%'
+        const progressBar = document.querySelector('.reading-progress .progress-bar')
+        if (progressBar) progressBar.style.width = scrolled + '%'
       })
     </script>
   </body>
