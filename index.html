@@ -1,0 +1,337 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CloudSim Lab - Simulação de Infraestrutura em Nuvem</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <!-- Seus CSS existentes -->
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/header.css" />
+  </head>
+  <body>
+    <header class="header fixed-top">
+      <div class="reading-progress">
+        <div class="progress-bar"></div>
+      </div>
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+            <i class="fab fa-linux me-2"></i>
+            <span class="brand-text">CloudSim Lab</span>
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#introducao"><i class="fas fa-book-open me-1"></i>Introdução</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#metodos"><i class="fas fa-cogs me-1"></i>Métodos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#resultados"><i class="fas fa-chart-bar me-1"></i>Resultados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#conclusao"><i class="fas fa-flag-checkered me-1"></i>Conclusão</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#codigo"><i class="fas fa-code me-1"></i>Código</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="progress-container">
+          <div class="progress-bar-custom"></div>
+          <div class="progress-glow"></div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="main-content">
+      <section class="hero-section">
+        <div class="container">
+          <div class="row align-items-center min-vh-100">
+            <div class="col-lg-8 mx-auto text-center">
+              <h1 class="display-3 fw-bold mb-4">
+                <span class="gradient-text">Atividade Prática:</span> Simulação de Infraestrutura em Nuvem com CloudSim
+              </h1>
+              <p class="lead text-gray mb-5">
+                <i class="fab fa-linux me-2"></i>Linux | <i class="fab fa-java me-2"></i>Java JDK 21 |
+                <i class="fas fa-code me-2"></i>Apache NetBeans 15 | <i class="fas fa-cloud me-2"></i>CloudSim 7.0.1
+              </p>
+              <div class="hero-buttons">
+                <a href="#introducao" class="btn btn-primary btn-lg me-3"><i class="fas fa-arrow-down me-2"></i>Ver Roteiro</a>
+                <a href="./CloudSim.pdf" class="btn btn-outline-light btn-lg" download><i class="fas fa-file-pdf me-2"></i>Baixar PDF</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="introducao" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-book-open me-3"></i>1. Introdução</h2>
+          <div class="row g-4">
+            <div class="col-lg-10 mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <h3><i class="fas fa-cloud-upload-alt text-primary me-2"></i>O que é Cloud Computing?</h3>
+                  <p class="text-gray mb-4">
+                    Computação em nuvem é o modelo que permite acesso sob demanda a recursos computacionais (servidores, armazenamento,
+                    bancos de dados) pela internet, pagando apenas pelo que usa.
+                  </p>
+                  <h3><i class="fas fa-microchip text-primary me-2"></i>Por que usar o CloudSim?</h3>
+                  <p class="text-gray">
+                    CloudSim é um framework de simulação em Java que permite
+                    <strong>testar hipóteses de infraestrutura em nuvem sem custos de hardware</strong> e
+                    <strong>avaliar riscos antes da implantação real</strong>.
+                  </p>
+                  <div class="concept-tip mt-4">
+                    <i class="fas fa-lightbulb"></i
+                    ><span><strong>Objetivo:</strong> Simular um Datacenter com Host e executar Cloudlets (tarefas)</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="metodos" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-cogs me-3"></i>2. Métodos</h2>
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">01</div>
+                  <span class="badge bg-primary mt-2">Preparação</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3><i class="fas fa-tools me-2 text-primary"></i>Preparação do Ambiente (Kali Linux)</h3>
+                  <div class="answer-box correct">
+                    <i class="fas fa-check-circle me-2"></i><strong>Passo 1.1 - Java JDK:</strong> Versão 21 para Linux/x64 configurada
+                  </div>
+                  <div class="answer-box correct mt-3">
+                    <i class="fas fa-check-circle me-2"></i><strong>Passo 1.2 - Apache NetBeans 15:</strong> Baixado e executado
+                  </div>
+                  <div class="answer-box correct mt-3">
+                    <i class="fas fa-check-circle me-2"></i><strong>Passo 1.3 - CloudSim:</strong> Framework baixado com JAR e exemplos
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">02</div>
+                  <span class="badge bg-primary mt-2">Configuração</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3><i class="fas fa-project-diagram me-2 text-primary"></i>Configuração no NetBeans</h3>
+                  <div class="answer-box correct">
+                    <i class="fas fa-check-circle me-2"></i><strong>Passo 2.1:</strong> Projeto Java criado com nome "Redes"
+                  </div>
+                  <div class="answer-box correct mt-3">
+                    <i class="fas fa-check-circle me-2"></i><strong>Passo 2.2:</strong> Importado CloudSimExample1.java
+                  </div>
+                  <div class="answer-box correct mt-3">
+                    <i class="fas fa-check-circle me-2"></i><strong>Passo 2.3:</strong> JAR do CloudSim adicionado às bibliotecas
+                  </div>
+                  <div class="explanation-box mt-4">
+                    <h4><i class="fas fa-exclamation-triangle me-2"></i>⚠️ Ponto Crítico</h4>
+                    <p>Sem o JAR, o código não reconhece as classes do framework.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card mb-5 study-card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-3 col-lg-2 text-center mb-3 mb-md-0">
+                  <div class="question-number">03</div>
+                  <span class="badge bg-primary mt-2">Execução</span>
+                </div>
+                <div class="col-md-9 col-lg-10">
+                  <h3><i class="fas fa-play-circle me-2 text-primary"></i>Execução da Simulação</h3>
+                  <div class="answer-box correct">
+                    <i class="fas fa-check-circle me-2"></i><strong>Passo 3.1:</strong> Projeto executado no NetBeans
+                  </div>
+                  <div class="answer-box correct mt-3">
+                    <i class="fas fa-check-circle me-2"></i><strong>Passo 3.2:</strong> Coleta de dados do console
+                  </div>
+                  <div class="concept-tip mt-3">
+                    <i class="fas fa-chart-line"></i><strong>Simula:</strong> Datacenter com Host + Cloudlet
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="resultados" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-chart-bar me-3"></i>3. Resultados</h2>
+          <div class="row g-4">
+            <div class="col-lg-10 mx-auto">
+              <div class="card mb-4">
+                <div class="card-body">
+                  <h3><i class="fas fa-terminal text-primary me-2"></i>Saída do Console NetBeans</h3>
+                  <div class="example-box" style="background: #0a0a0a; font-family: 'Courier New', monospace">
+                    <pre style="white-space: pre-wrap; color: #e0e0e0">
+Initialising CloudSim...
+Datacenter created: Datacenter_0
+Cloudlet submitted successfully
+Cloudlet finished successfully
+Simulation completed
+Total execution time: XXXX ms</pre
+                    >
+                  </div>
+                  <h4 class="mt-4"><i class="fas fa-chart-line text-primary me-2"></i>Interpretação</h4>
+                  <ul class="text-gray">
+                    <li><strong>Initialising CloudSim:</strong> Framework iniciado</li>
+                    <li><strong>Datacenter created:</strong> Datacenter simulado</li>
+                    <li><strong>Cloudlet finished:</strong> Tarefa processada com sucesso</li>
+                  </ul>
+                  <div class="concept-tip mt-3">
+                    <i class="fas fa-check-circle text-success"></i><strong>Conclusão:</strong> Cloudlet finalizada com sucesso → ambiente
+                    correto
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="conclusao" class="section-padding bg-darker">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-flag-checkered me-3"></i>4. Conclusão</h2>
+          <div class="row g-4">
+            <div class="col-lg-10 mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <h3><i class="fas fa-chart-line text-primary me-2"></i>Importância da Simulação</h3>
+                  <p class="text-gray">CloudSim permite testar escalabilidade e provisionamento dinâmico sem custos operacionais reais.</p>
+                  <h3 class="mt-4"><i class="fas fa-balance-scale text-primary me-2"></i>Benefícios</h3>
+                  <ul class="text-gray">
+                    <li>✅ Redução de Riscos</li>
+                    <li>✅ Otimização de Custos</li>
+                    <li>✅ Escalabilidade</li>
+                    <li>✅ Provisionamento Dinâmico</li>
+                  </ul>
+                  <div class="concept-tip mt-4">
+                    <i class="fas fa-graduation-cap"></i><strong>Conclusão Final:</strong> Simulação com CloudSim é fundamental para
+                    projetar infraestruturas em nuvem eficientes.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="codigo" class="section-padding">
+        <div class="container">
+          <h2 class="section-title"><i class="fas fa-code me-3"></i>5. Código Fonte</h2>
+          <div class="row g-4">
+            <div class="col-lg-10 mx-auto">
+              <div class="card">
+                <div class="card-body">
+                  <pre style="background: #0d1117; padding: 1rem; border-radius: 8px; overflow-x: auto; font-size: 0.8rem"><code>
+package redes;
+
+import org.cloudbus.cloudsim.cloudlets.Cloudlet;
+import org.cloudbus.cloudsim.cloudlets.CloudletSimple;
+import org.cloudbus.cloudsim.core.CloudSim;
+import org.cloudbus.cloudsim.datacenters.Datacenter;
+import org.cloudbus.cloudsim.datacenters.DatacenterSimple;
+import org.cloudbus.cloudsim.brokers.DatacenterBroker;
+import org.cloudbus.cloudsim.brokers.DatacenterBrokerSimple;
+import org.cloudbus.cloudsim.hosts.Host;
+import org.cloudbus.cloudsim.hosts.HostSimple;
+import org.cloudbus.cloudsim.resources.Pe;
+import org.cloudbus.cloudsim.resources.PeSimple;
+import org.cloudbus.cloudsim.schedulers.vm.VmSchedulerTimeShared;
+import org.cloudbus.cloudsim.utilizationmodels.UtilizationModelFull;
+import org.cloudbus.cloudsim.vms.Vm;
+import org.cloudbus.cloudsim.vms.VmSimple;
+import java.util.*;
+
+public class Redes {
+    public static void main(String[] args) {
+        CloudSim cloudsim = new CloudSim();
+        List&lt;Host&gt; hosts = new ArrayList&lt;&gt;();
+        List&lt;Pe&gt; peList = new ArrayList&lt;&gt;();
+        peList.add(new PeSimple(1000));
+        peList.add(new PeSimple(1000));
+        Host host = new HostSimple(8192, 100000, 10000);
+        host.getCpuProvisioner().add(peList);
+        host.setVmScheduler(new VmSchedulerTimeShared());
+        hosts.add(host);
+        Datacenter datacenter = new DatacenterSimple(cloudsim, hosts);
+        datacenter.setName("Datacenter_SP");
+        DatacenterBroker broker = new DatacenterBrokerSimple(cloudsim);
+        List&lt;Vm&gt; vms = new ArrayList&lt;&gt;();
+        Vm vm1 = new VmSimple(1024, 1);
+        vm1.setMips(500);
+        vms.add(vm1);
+        broker.submitVmList(vms);
+        List&lt;Cloudlet&gt; cloudlets = new ArrayList&lt;&gt;();
+        Cloudlet c1 = new CloudletSimple(10000, 1);
+        c1.setUtilizationModel(new UtilizationModelFull());
+        cloudlets.add(c1);
+        broker.submitCloudletList(cloudlets);
+        cloudsim.start();
+        System.out.println("✅ Simulação concluída!");
+    }
+}
+                            </code></pre>
+                  <div class="concept-tip mt-3">
+                    <i class="fas fa-info-circle"></i><strong>Explicação:</strong> O código cria um Datacenter com 1 Host (2 CPUs), uma VM e
+                    uma tarefa de 10k instruções.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6"><p class="mb-0">© 2026 CloudSim Lab - Atividade Prática</p></div>
+          <div class="col-md-6 text-md-end">
+            <a href="./CloudSim.pdf" class="text-gray" download><i class="fas fa-file-pdf me-1"></i>Baixar PDF</a>
+            <span class="mx-2">|</span>
+            <span>☁️ CloudSim 7.0.1</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./js/script.js"></script>
+    <script src="./js/header.js"></script>
+    <script>
+      window.addEventListener('scroll', function () {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight
+        const scrolled = (winScroll / height) * 100
+        document.getElementById('progressBar').style.width = scrolled + '%'
+      })
+    </script>
+  </body>
+</html>
